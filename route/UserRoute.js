@@ -6,7 +6,8 @@ const verify=require('../middleware/VerifySignup')
 router.get("/", UserController.register);
 router.post("/register",[verify.checkDuplicateEntries], UserController.register_create);
 router.get("/login",UserController.login);
-// router.get("/user-dashboard", UserController.userAuth, UserController.userDashboard);
-// router.get("/logout", UserController.logout);
+router.post("/login_create",UserController.login_create);
+router.get("/dashboard",UserController.userAuth,UserController.dashboard);
+ router.get("/logout", UserController.logout);
 
 module.exports = router;
